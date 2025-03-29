@@ -1,21 +1,28 @@
-export interface User {
-  id: string;
-  username: string;
-  isOnline: boolean;
-  lastSeen: Date;
-}
-
-export interface Message {
-  id: string;
-  userId: string;
-  username: string;
-  content: string;
-  timestamp: Date;
-}
-
-export interface ChatRoom {
+export interface Model {
   id: string;
   name: string;
-  messages: Message[];
-  users: User[];
+  description: string;
+  category: string;
+  imageUrl: string;
+  detailedDescription: string;
+}
+
+export interface ModelCategory {
+  id: string;
+  name: string;
+  description: string;
+  color: string;
+}
+
+export interface PredictionResult {
+  modelId: string;
+  imageId: string;
+  result: any;
+  timestamp: string;
+}
+
+export interface UploadedImage {
+  id: string;
+  url: string;
+  timestamp: string;
 }
