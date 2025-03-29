@@ -2,15 +2,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { TooltipProvider } from "./components/ui/tooltip";
-
 import { ThemeProvider } from "./components/layout/theme-provider";
 import "./index.css";
+
 import Index from "./pages";
-import LoginPage from "./pages/login";
-import ChatPage from "./pages/chat";
+import ModelPage from "./pages/model";
+import AboutPage from "./pages/about";
 
 const queryClient = new QueryClient();
 
@@ -21,8 +20,8 @@ createRoot(document.getElementById("root")!).render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/chat" element={<ChatPage />} />
+            <Route path="/model/:id" element={<ModelPage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </BrowserRouter>
         <Sonner />

@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Model } from "@/lib/types";
 import { mockCategories } from "@/lib/mock-data";
 

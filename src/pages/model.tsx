@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import { ImageUploader } from "@/components/image-uploader";
