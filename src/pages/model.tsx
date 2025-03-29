@@ -58,8 +58,8 @@ const ModelPage = () => {
         const mockResult: PredictionResult = {
           modelId: selectedModel.id,
           imageId: uploadedImage.id,
-          timestamp: new Date().toISOString(),
-          result: generateMockResult(selectedModel.id)
+          result: generateMockResult(selectedModel.id),
+          timestamp: new Date().toISOString()
         };
         
         setPredictionResult(mockResult);
@@ -176,12 +176,11 @@ const ModelPage = () => {
             <p className="text-muted-foreground mb-6">{selectedModel.description}</p>
             
             <div 
-              className="h-48 bg-cover bg-center rounded-lg mb-6" 
-              style={{ 
-                backgroundImage: `url(${selectedModel.imageUrl || 'https://placehold.co/600x400/3b82f6/FFFFFF/png?text=' + selectedModel.name})`,
-                backgroundColor: category?.color || '#3b82f6'
-              }}
-            />
+              className="h-48 bg-cover bg-center rounded-lg mb-6 flex items-center justify-center"
+              style={{ backgroundColor: category?.color || '#3b82f6' }}
+            >
+              <span className="text-white text-3xl font-bold">{selectedModel.name}</span>
+            </div>
             
             <h2 className="text-xl font-semibold mb-2">About this model</h2>
             <p className="text-muted-foreground whitespace-pre-line">
