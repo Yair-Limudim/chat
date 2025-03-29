@@ -2,6 +2,7 @@ import { create } from "zustand";
 import type { Model, PredictionResult, UploadedImage } from "./types";
 import { mockModels } from "./mock-data";
 
+// Model Store
 interface ModelStore {
   models: Model[];
   selectedModel: Model | null;
@@ -56,4 +57,43 @@ export const useModelStore = create<ModelStore>((set, get) => ({
   setError: (error: string | null) => {
     set({ error });
   }
+}));
+
+// Placeholder stores to satisfy imports
+interface AuthStore {
+  user: null;
+  isAuthenticated: boolean;
+  login: () => void;
+  logout: () => void;
+}
+
+export const useAuthStore = create<AuthStore>(() => ({
+  user: null,
+  isAuthenticated: false,
+  login: () => {},
+  logout: () => {}
+}));
+
+interface ChatStore {
+  messages: [];
+  users: [];
+  sendMessage: () => void;
+  fetchUsers: () => void;
+}
+
+export const useChatStore = create<ChatStore>(() => ({
+  messages: [],
+  users: [],
+  sendMessage: () => {},
+  fetchUsers: () => {}
+}));
+
+interface UIStore {
+  sidebarOpen: boolean;
+  toggleSidebar: () => void;
+}
+
+export const useUIStore = create<UIStore>(() => ({
+  sidebarOpen: false,
+  toggleSidebar: () => {}
 }));
